@@ -1,24 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wgY-bE-CCo">
+    <device id="ipad11_0rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="Lfd-XO-d76">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController storyboardIdentifier="ImagePreviewVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="wgY-bE-CCo" customClass="ViewController" customModule="ImagePreview" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aSd-oK-faN">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3U-S5-F1H">
+                                <rect key="frame" x="0.0" y="24" width="393" height="828"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gsn-2R-awn">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="828"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="gsn-2R-awn" secondAttribute="trailing" id="98q-EN-XEe"/>
+                                    <constraint firstItem="gsn-2R-awn" firstAttribute="leading" secondItem="F3U-S5-F1H" secondAttribute="leading" id="DOb-sd-az1"/>
+                                    <constraint firstAttribute="bottom" secondItem="gsn-2R-awn" secondAttribute="bottom" id="K8E-Kn-St5"/>
+                                    <constraint firstItem="gsn-2R-awn" firstAttribute="width" secondItem="F3U-S5-F1H" secondAttribute="width" id="WrF-Wf-nYu"/>
+                                    <constraint firstItem="gsn-2R-awn" firstAttribute="top" secondItem="F3U-S5-F1H" secondAttribute="top" id="ZBr-V7-pfp"/>
+                                    <constraint firstItem="gsn-2R-awn" firstAttribute="height" secondItem="F3U-S5-F1H" secondAttribute="height" id="dwX-gk-JE3"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="XcD-ma-1wW"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XcD-ma-1wW" firstAttribute="bottom" secondItem="F3U-S5-F1H" secondAttribute="bottom" id="JDn-wb-L6t"/>
+                            <constraint firstItem="F3U-S5-F1H" firstAttribute="top" secondItem="XcD-ma-1wW" secondAttribute="top" id="cqx-cj-adc"/>
+                            <constraint firstItem="XcD-ma-1wW" firstAttribute="trailing" secondItem="F3U-S5-F1H" secondAttribute="trailing" id="lrF-5O-6ja"/>
+                            <constraint firstItem="F3U-S5-F1H" firstAttribute="leading" secondItem="XcD-ma-1wW" secondAttribute="leading" id="sOm-cD-ATI"/>
+                        </constraints>
                     </view>
+                    <size key="freeformSize" width="393" height="852"/>
+                    <connections>
+                        <outlet property="imageView" destination="gsn-2R-awn" id="7ll-Hu-Sfm"/>
+                        <outlet property="scrollView" destination="F3U-S5-F1H" id="bwZ-aQ-8xE"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Aa-TZ-5jg" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-40" y="4033"/>
         </scene>
     </scenes>
 </document>
